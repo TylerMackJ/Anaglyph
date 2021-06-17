@@ -21,11 +21,11 @@ function setup() {
   b = createGraphics(img.width, img.height);
 
   r.tint(255, 0, 0);
-  r.image(img, img.width / 2, img.height / 2);
+  r.image(img, 0, 0);
   g.tint(0, 255, 0);
-  g.image(img, img.width / 2, img.height / 2);
+  g.image(img, 0, 0);
   b.tint(0, 0, 255);
-  b.image(img, img.width / 2, img.height / 2);
+  b.image(img, 0, 0);
   noTint();
 
   background(0);
@@ -44,8 +44,7 @@ function draw() {
   centerOffsetX = mouseX - centerX;
   centerOffsetY = mouseY - centerY;
 
-  // tint(0, 255, 0);
-  image(g, centerX - (img.width / 2) - centerOffsetX, centerY - (img.height / 2) - centerOffsetY);
+  image(g, centerX - (g.width / 2) - centerOffsetX, centerY - (g.height / 2) - centerOffsetY);
 
   // Draw Red
 
@@ -55,8 +54,7 @@ function draw() {
   centerOffsetX = centerOffsetXNew;
   centerOffsetY = centerOffsetYNew
 
-  // tint(255, 0, 0);
-  image(r, centerX - (img.width / 2) - centerOffsetX, centerY - (img.height / 2) - centerOffsetY);
+  image(r, centerX - (r.width / 2) - centerOffsetX, centerY - (r.height / 2) - centerOffsetY);
 
   // Draw Blue
 
@@ -66,6 +64,5 @@ function draw() {
   centerOffsetX = centerOffsetXNew;
   centerOffsetY = centerOffsetYNew
 
-  // tint(0, 0, 255);
-  image(b, centerX - (img.width / 2) - centerOffsetX, centerY - (img.height / 2) - centerOffsetY);
+  image(b, centerX - (b.width / 2) - centerOffsetX, centerY - (b.height / 2) - centerOffsetY);
 }
