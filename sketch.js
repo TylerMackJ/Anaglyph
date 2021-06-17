@@ -1,5 +1,5 @@
 function preload() {
-  img = loadImage("https://picsum.photos/" + int(windowWidth * 2) + "/" + int(windowHeight * 2));
+  img = loadImage("https://picsum.photos/" + int(windowWidth * 1.5) + "/" + int(windowHeight * 1.5));
 }
 
 function setup() {
@@ -31,8 +31,8 @@ function draw() {
 
   // Draw Green
 
-  centerOffsetX = mouseX - centerX;
-  centerOffsetY = mouseY - centerY;
+  centerOffsetX = (mouseX - centerX) / 2;
+  centerOffsetY = (mouseY - centerY) / 2;
 
   image(g, centerX - (g.width / 2) - centerOffsetX, centerY - (g.height / 2) - centerOffsetY);
 
