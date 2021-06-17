@@ -1,5 +1,5 @@
 function preload() {
-  img = loadImage("https://picsum.photos/1080/720");
+  img = loadImage("https://picsum.photos/640/480");
 }
 
 function setup() {
