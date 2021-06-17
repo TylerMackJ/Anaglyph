@@ -6,6 +6,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   blendMode(ADD);
 
+  pixelDensity(1);
+
   r = createGraphics(img.width, img.height);
   g = createGraphics(img.width, img.height);
   b = createGraphics(img.width, img.height);
