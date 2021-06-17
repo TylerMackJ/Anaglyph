@@ -16,14 +16,19 @@ function setup() {
     img.resize(img.width * (maxImgHeight / img.height), img.height * (maxImgHeight / img.height));
   }
 
-  pg = createGraphics(img.width, img.height);
-  pg.noStroke();
-  pg.clear();
-  pg.image(img, 0, 0);
+  r = createGraphics(img.width, img.height);
+  g = createGraphics(img.width, img.height);
+  b = createGraphics(img.width, img.height);
+
+  r.tint(255, 0, 0);
+  r.image(img, img.width / 2, img.height / 2);
+  g.tint(0, 255, 0);
+  g.image(img, img.width / 2, img.height / 2);
+  b.tint(0, 0, 255);
+  b.image(img, img.width / 2, img.height / 2);
+  noTint();
 
   background(0);
-
-  frameRate(20);
 }
 
 function draw() {
@@ -39,8 +44,8 @@ function draw() {
   centerOffsetX = mouseX - centerX;
   centerOffsetY = mouseY - centerY;
 
-  tint(0, 255, 0);
-  image(pg, centerX - (pg.width / 2) - centerOffsetX, centerY - (pg.height / 2) - centerOffsetY);
+  // tint(0, 255, 0);
+  image(g, centerX - (img.width / 2) - centerOffsetX, centerY - (img.height / 2) - centerOffsetY);
 
   // Draw Red
 
@@ -50,8 +55,8 @@ function draw() {
   centerOffsetX = centerOffsetXNew;
   centerOffsetY = centerOffsetYNew
 
-  tint(255, 0, 0);
-  image(pg, centerX - (pg.width / 2) - centerOffsetX, centerY - (pg.height / 2) - centerOffsetY);
+  // tint(255, 0, 0);
+  image(r, centerX - (img.width / 2) - centerOffsetX, centerY - (img.height / 2) - centerOffsetY);
 
   // Draw Blue
 
@@ -61,6 +66,6 @@ function draw() {
   centerOffsetX = centerOffsetXNew;
   centerOffsetY = centerOffsetYNew
 
-  tint(0, 0, 255);
-  image(pg, centerX - (pg.width / 2) - centerOffsetX, centerY - (pg.height / 2) - centerOffsetY);
+  // tint(0, 0, 255);
+  image(b, centerX - (img.width / 2) - centerOffsetX, centerY - (img.height / 2) - centerOffsetY);
 }
