@@ -1,20 +1,10 @@
 function preload() {
-  img = loadImage("https://picsum.photos/640/480");
+  img = loadImage("https://picsum.photos/" + int(windowWidth * 2) + "/" + int(windowHeight * 2));
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   blendMode(ADD);
-
-  maxImgWidth = width;
-  maxImgHeight = height;
-
-  if (img.width > maxImgWidth) {
-    img.resize(img.width * (maxImgWidth / img.width), img.height * (maxImgWidth / img.width));
-  }
-  if (img.height > maxImgHeight) {
-    img.resize(img.width * (maxImgHeight / img.height), img.height * (maxImgHeight / img.height));
-  }
 
   r = createGraphics(img.width, img.height);
   g = createGraphics(img.width, img.height);
