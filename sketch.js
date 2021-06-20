@@ -3,7 +3,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let dpr = window.devicePixelRatio || 1
+  createCanvas(windowWidth * dpr, windowHeight * dpr);
   blendMode(ADD);
 
   pixelDensity(1);
