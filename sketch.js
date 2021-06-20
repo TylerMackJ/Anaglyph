@@ -1,5 +1,6 @@
 function preload() {
-  img = loadImage("https://picsum.photos/" + int(windowWidth * 1.5) + "/" + int(windowHeight * 1.5));
+  let dpr = window.devicePixelRatio || 1
+  img = loadImage("https://picsum.photos/" + int(windowWidth * dpr * 1.5) + "/" + int(windowHeight * dpr * 1.5));
 }
 
 function setup() {
